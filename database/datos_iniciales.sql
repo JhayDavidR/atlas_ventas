@@ -11,12 +11,12 @@ INSERT INTO clientes (nombre, ciudad, fecha_registro) VALUES
 -- ==============================
 -- Insertar datos: productos
 -- ==============================
-INSERT INTO productos (categoria, precio) VALUES
-('Electrónica', 500.00),
-('Electrónica', 1500.00),
-('Hogar', 200.00),
-('Hogar', 750.00),
-('Ropa', 100.00);
+INSERT INTO productos (nombre_producto, categoria, precio) VALUES
+('Computador','Electrónica', 500.00),
+('Celular','Electrónica', 1500.00),
+('Closet','Hogar', 200.00),
+('Cortinas','Hogar', 750.00),
+('Chaqueta','Ropa', 100.00);
 
 -- ==============================
 -- Insertar datos: ventas

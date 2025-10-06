@@ -18,6 +18,7 @@ CREATE TABLE clientes (
 -- ==============================
 CREATE TABLE productos (
     id_producto INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_producto VARCHAR(100),
     categoria VARCHAR(100),
     precio DECIMAL(10,2)
 );
