@@ -5,15 +5,12 @@ import pandas as pd
 import configparser
 from sqlalchemy import create_engine
 import pymysql
+from config.db_config import get_db_config
 
 app = Flask(__name__)
 
-DB_CONFIG = {
-    'host': 'localhost',
-    'user': 'root',
-    'password': 'Julian1000120395**',
-    'database': 'base_envio'
-}
+DB_CONFIG = get_db_config('mysql_base_envio')
+
 
 # --- Página principal ---
 @app.route('/')
@@ -83,19 +80,9 @@ def ver_ventas():
 @app.route('/ejecutar_etl', methods=['POST'])
 def ejecutar_etl():
     try:
-        SOURCE_DB = {
-            "host": "localhost",
-            "user": "root",
-            "password": "Julian1000120395**",
-            "database": "base_envio"
-        }
 
-        TARGET_DB = {
-            "host": "localhost",
-            "user": "root",
-            "password": "Julian1000120395**",
-            "database": "base_cargue"
-        }
+        SOURCE_DB = get_db_config('mysql_base_envio')
+        TARGET_DB = get_db_config('mysql_base_cargue')
 
         TABLES = ["clientes", "productos", "ventas"]
         data_frames = {}

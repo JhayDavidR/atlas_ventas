@@ -1,16 +1,12 @@
 from flask import Flask, request, jsonify
 import mysql.connector
 from flask_cors import CORS
+from config.db_config import get_db_config
 
 app = Flask(__name__)
 CORS(app)
 
-DB_CONFIG = {
-    'host': 'localhost',
-    'user': 'root',
-    'password': 'Julian1000120395**',
-    'database': 'base_envio'
-}
+DB_CONFIG = get_db_config('mysql_base_envio')
 
 @app.route('/ventas_por_categoria', methods=['GET'])
 def ventas_por_categoria():
