@@ -1,0 +1,13 @@
+# Archivos de caché
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Configuración local
+*.env
+config.ini
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
